@@ -9,14 +9,15 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class TagsInputBox {
+public class TagsInputBoxPage {
     // locators
     private static final By tag = By.cssSelector("[class='uit uit-multiply']");
 
     private static final SelenideElement closeTagBtn = $(tag);
-    private static final List<SelenideElement> closeTagList = $$(tag);
+    private static final List<SelenideElement> tagList = $$(tag);
 
     private static final SelenideElement inputField = $("input[type='text']");
+
 
     // methods
     public void removeTag() {
@@ -24,7 +25,7 @@ public class TagsInputBox {
     }
 
     public int getTagCount() {
-        return (int) closeTagList.stream()
+        return (int) tagList.stream()
                 .filter(SelenideElement::isDisplayed)
                 .count();
     }
