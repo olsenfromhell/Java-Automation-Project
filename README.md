@@ -2,7 +2,7 @@
 
 Welcome to my automation project!
 
-This project is dedicated to practicing writing UI and API tests using the Arrange-Act-Assert pattern.
+This project is dedicated to practicing writing UI and API tests using the Arrange-Act-Assert pattern and Page Object model.
 The following technologies and frameworks are utilized in this project:
 
 - Selenide: For browser automation and UI testing.
