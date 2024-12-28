@@ -12,6 +12,7 @@ public class TagsInputBoxTest extends TestBase {
 
     @BeforeEach
     public void setUp() {
+        BrowserConfig.setup();
         Selenide.open(Pages.TAGS_INPUT_BOX_PAGE);
         tagsInputBox = new TagsInputBoxPage();
     }
