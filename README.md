@@ -13,3 +13,5 @@ The technologies and frameworks used in this project include:
 - Gradle: for project build and dependency management.
 
 The project is in development and I update it from time to time.
+
+All tests are run with ```./gradlew test```
