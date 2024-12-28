@@ -4,9 +4,9 @@ This project is dedicated to practicing writing UI and API tests using the Arran
 The technologies and frameworks used in this project include:
 
 - Selenide: for browser automation and UI testing.
-- Rest Assured: for API testing.
+- Rest Assured: for API testing (yet to be written).
 - JUnit 5: for writing and running tests.
-- Jenkins w/ Allure Reports: for CI/CD and generating test reports.
+- Jenkins w/ Allure Reports: for CI and generating test reports.
 - Java Collections Framework: for handling data structures.
 - Stream API: for processing collections of objects.
 - DataFaker: for generating data in tests.
