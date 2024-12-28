@@ -2,6 +2,7 @@ package dev.qaplayground.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import dev.qaplayground.FakeData;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -20,16 +21,19 @@ public class TagsInputBoxPage {
 
 
     // methods
+    @Step("Delete tag")
     public void removeTag() {
         closeTagBtn.click();
     }
 
+    @Step("Count displayed tags")
     public int getTagCount() {
         return (int) tagList.stream()
                 .filter(SelenideElement::isDisplayed)
                 .count();
     }
 
+    @Step("Add new tag")
     public void addTag() {
         inputField.setValue(FakeData.anyBeerName).pressEnter();
     }

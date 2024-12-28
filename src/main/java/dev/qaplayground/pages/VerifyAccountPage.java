@@ -1,6 +1,7 @@
 package dev.qaplayground.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.util.List;
 
@@ -14,13 +15,12 @@ public class VerifyAccountPage {
 
 
     // methods
+    @Step("Fill code input")
     public void fillCodeInput(String value) {
-        inputField.stream()
-                .iterator()
-                .next()
-                .setValue(value);
+        inputField.forEach(selenideElement -> selenideElement.sendKeys(value));
     }
 
+    @Step("Return 'Success' text from success modal")
     public String returnTextFromSuccessModal() {
         return successModal.getText();
     }

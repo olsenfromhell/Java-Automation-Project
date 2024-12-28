@@ -12,6 +12,7 @@ public class VerifyAccountTest extends TestBase {
 
     @BeforeEach
     public void setUp() {
+        BrowserConfig.setup();
         Selenide.open(Pages.VERIFY_ACCOUNT_PAGE);
         verifyAccount = new VerifyAccountPage();
     }

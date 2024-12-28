@@ -8,11 +8,11 @@ public class TestBase {
 
     @BeforeEach
     public void setUp() {
-        BrowserConfig.setup(); // Вызываем настройку браузера
+        BrowserConfig.setup(); // browser setup
     }
 
     @AfterAll
     public static void tearDown() {
-        Selenide.closeWebDriver(); // Закрываем WebDriver
+        Selenide.closeWebDriver(); // close web driver, just in case
     }
 }
