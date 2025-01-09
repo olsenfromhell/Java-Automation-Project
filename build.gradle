@@ -52,7 +52,6 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.9'
     implementation 'org.slf4j:slf4j-simple:2.0.9'
 
-
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.18.2'
     testImplementation 'org.assertj:assertj-core:3.11.1'
 
