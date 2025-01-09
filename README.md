@@ -33,6 +33,7 @@ All tests are run with ```./gradlew test``` from root.
 [Download file test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/dev/qaplayground/DownloadFileTest.java):
 - <i>Download a file and assert the file's name and size.</i>
 
+<hr>
 
 **API tests contain:**
 
