@@ -5,9 +5,8 @@ import in.reqres.endpoints.Endpoints;
 import in.reqres.models.user.UserDataPOJO;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 
 import static io.restassured.RestAssured.given;
 
