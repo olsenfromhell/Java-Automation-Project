@@ -20,17 +20,17 @@ All tests are run with ```./gradlew test``` from root.
 
 **UI tests contain:**
 
-Verify account test:
+[Verify account test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/dev/qaplayground/VerifyAccountTest.java):
 - <i>Enter a valid code by pressing the key-up button or typing a number and assert success message.</i>
 
-Tags input box tests:
+[Tags input box tests](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/dev/qaplayground/TagsInputBoxTest.java):
 - <i>Add a tag and verify its presence.</i>
 - <i>Remove a tag and verify it is removed.</i>
 
-Upload image test:
+[Upload image test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/dev/qaplayground/UploadFileTest.java):
 - <i>Upload an image file and assert the file's name.</i>
 
-Download file test:
+[Download file test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/dev/qaplayground/DownloadFileTest.java):
 - <i>Download a file and assert the file's name and size.</i>
 
 
