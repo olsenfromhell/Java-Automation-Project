@@ -1,4 +1,4 @@
-## Automation Project in Java
+### Automation Project in Java
 
 This project is dedicated to practicing writing UI and API tests using the Arrange-Act-Assert pattern and Page Object model.
 The technologies and frameworks used in this project include:
@@ -15,3 +15,24 @@ The technologies and frameworks used in this project include:
 The project is in development and I update it from time to time.
 
 All tests are run with ```./gradlew test``` from root.
+
+<hr>
+
+**UI tests contain:**
+
+Verify account test:
+- <i>Enter a valid code by pressing the key-up button or typing a number and assert success message.</i>
+
+Tags input box tests:
+- <i>Add a tag and verify its presence.</i>
+- <i>Remove a tag and verify it is removed.</i>
+
+Upload image test:
+- <i>Upload an image file and assert the file's name.</i>
+
+Download file test:
+- <i>Download a file and assert the file's name and size.</i>
+
+
+**API tests contain:**
+TBA.
