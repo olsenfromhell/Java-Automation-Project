@@ -1,6 +1,7 @@
 package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
+import dev.qaplayground.config.BrowserConfig;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 

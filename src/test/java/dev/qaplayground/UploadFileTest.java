@@ -2,6 +2,7 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.pages.UploadFilePage;
+import dev.qaplayground.endpoints.Pages;
 import org.junit.jupiter.api.*;
 
 import java.io.File;
