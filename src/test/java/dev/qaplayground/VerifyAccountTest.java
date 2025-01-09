@@ -2,17 +2,14 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.pages.VerifyAccountPage;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class VerifyAccountTest extends TestBase {
     private VerifyAccountPage verifyAccount;
 
     @BeforeEach
     public void setUp() {
-        BrowserConfig.setup();
+        super.setUp();
         Selenide.open(Pages.VERIFY_ACCOUNT_PAGE);
         verifyAccount = new VerifyAccountPage();
     }
@@ -30,5 +27,10 @@ public class VerifyAccountTest extends TestBase {
 
         // Assert
         Assertions.assertEquals(expectedMessage, actualMessage, "'Success' text not found");
+    }
+
+    @AfterAll
+    public static void tearDown() {
+        TestBase.tearDown();
     }
 }

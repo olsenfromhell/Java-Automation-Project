@@ -2,19 +2,16 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.pages.UploadFilePage;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.File;
 
-public class UploadFileTest {
+public class UploadFileTest extends TestBase {
     private UploadFilePage uploadFilePage;
 
     @BeforeEach
     public void setUp() {
-        BrowserConfig.setup();
+        super.setUp();
         Selenide.open(Pages.UPLOAD_FILE_PAGE);
         uploadFilePage = new UploadFilePage();
     }
@@ -32,5 +29,10 @@ public class UploadFileTest {
 
         // Assert
         Assertions.assertEquals(expected, actual);
+    }
+
+    @AfterAll
+    public static void tearDown() {
+        TestBase.tearDown();
     }
 }
