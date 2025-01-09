@@ -19,6 +19,7 @@ public class GetUserByIdTest {
     }
 
     @Test
+    @DisplayName("Get user by ID and assert the user's info")
     public void getUserByIdTest() {
         // Arrange
         Response response;
