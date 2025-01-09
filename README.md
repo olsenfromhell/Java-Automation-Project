@@ -35,4 +35,6 @@ All tests are run with ```./gradlew test``` from root.
 
 
 **API tests contain:**
-TBA.
+
+[Get user by ID test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/GetUserByIdTest.java):
+- <i>Send a GET request to retrieve user information by user ID and assert the user's details and support information.</i>
