@@ -1,7 +1,7 @@
 package dev.qaplayground.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import dev.qaplayground.FakeData;
+import dev.qaplayground.utils.DataFaker;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
@@ -35,7 +35,7 @@ public class TagsInputBoxPage {
 
     @Step("Add new tag")
     public void addTag() {
-        inputField.setValue(FakeData.anyBeerName).pressEnter();
+        inputField.setValue(DataFaker.anyBeerName).pressEnter();
     }
 
 }

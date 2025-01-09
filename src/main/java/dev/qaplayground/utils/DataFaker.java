@@ -1,8 +1,8 @@
-package dev.qaplayground;
+package dev.qaplayground.utils;
 
 import net.datafaker.Faker;
 
-public class FakeData {
+public class DataFaker {
 
     static Faker faker = new Faker();
 

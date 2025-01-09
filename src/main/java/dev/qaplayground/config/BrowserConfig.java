@@ -1,4 +1,4 @@
-package dev.qaplayground;
+package dev.qaplayground.config;
 
 import com.codeborne.selenide.Configuration;
 

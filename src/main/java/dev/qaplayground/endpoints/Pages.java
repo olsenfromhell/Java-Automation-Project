@@ -1,4 +1,4 @@
-package dev.qaplayground;
+package dev.qaplayground.endpoints;
 
 public class Pages {
     public static final String VERIFY_ACCOUNT_PAGE = "/apps/verify-account/";
