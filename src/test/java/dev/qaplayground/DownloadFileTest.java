@@ -28,11 +28,12 @@ public class DownloadFileTest extends TestBase {
         File downloadedFile = $("[id='file']").download();
 
         // Assert
-        Assertions.assertTrue(downloadedFile.exists(), "File is not downloaded");
-        Assertions.assertTrue(downloadedFile.length() > 0, "File must be not empty");
-
-        Assertions.assertEquals(expectedFileName, downloadedFile.getName(), "Name of the file must be 'sample.pdf'");
-        Assertions.assertEquals(expectedFileSize, downloadedFile.length(), "File size must be 1042157 Byte");
+        Assertions.assertAll(
+                () -> Assertions.assertTrue(downloadedFile.exists(), "File is not downloaded"),
+                () -> Assertions.assertTrue(downloadedFile.length() > 0, "File must be not empty"),
+                () -> Assertions.assertEquals(expectedFileName, downloadedFile.getName(), "Name of the file must be 'sample.pdf'"),
+                () -> Assertions.assertEquals(expectedFileSize, downloadedFile.length(), "File size must be 1042157 Byte")
+        );
     }
 
     @AfterAll

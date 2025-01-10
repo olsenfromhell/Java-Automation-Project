@@ -39,3 +39,5 @@ All tests are run with ```./gradlew test``` from root.
 
 [Get user by ID test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/GetUserByIdTest.java):
 - <i>Send a GET request to retrieve user information by user ID and assert the user's details and support information.</i>
+- <i>Get nonexistent user by ID and assert 404 (HTTP_NOT_FOUND) status code and empty body.</i>
+
