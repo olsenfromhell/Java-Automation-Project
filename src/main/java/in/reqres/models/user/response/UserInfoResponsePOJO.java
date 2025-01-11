@@ -1,4 +1,4 @@
-package in.reqres.models.user;
+package in.reqres.models.user.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class UserPOJO {
+public class UserInfoResponsePOJO {
     private Data data;
     private Support support;
 

@@ -2,12 +2,16 @@ package in.reqres.user;
 
 import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
-import in.reqres.models.user.UserPOJO;
+import in.reqres.models.user.response.UserInfoResponsePOJO;
+import in.reqres.models.user.request.UserRegistrationRequestPOJO;
+import in.reqres.models.user.response.UserRegistrationResponsePOJO;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
+import utils.DataFaker;
 
 import static io.restassured.RestAssured.given;
+import static java.net.HttpURLConnection.HTTP_CREATED;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -20,7 +24,7 @@ public class UserApiTests {
     }
 
     @Test
-    @DisplayName("Get single user by ID and assert the user's info")
+    @DisplayName("Get single user by ID and assert user's info")
     public void getUserByIdTest() {
         // Arrange
         String userId = "2";
@@ -33,12 +37,12 @@ public class UserApiTests {
         String expectedSupportText = "Tired of writing endless social media content? Let Content Caddy generate it for you.";
 
         // Act
-        UserPOJO response = given()
+        UserInfoResponsePOJO response = given()
                 .contentType(ContentType.JSON)
                 .get(Endpoints.USERS_ENDPOINT + userId)
-                .then().extract().as(UserPOJO.class);
+                .then().extract().as(UserInfoResponsePOJO.class);
 
-        UserPOJO.Data expectedData = response.getData();
+        UserInfoResponsePOJO.Data expectedData = response.getData();
         int actualId = response.getData().getId();
         String actualEmail = response.getData().getEmail();
         String actualFirstName = response.getData().getFirstName();
@@ -82,4 +86,42 @@ public class UserApiTests {
         // Assert
         Assertions.assertEquals(expectedBody, actualBody, "The response body is not empty");
     }
+
+    @Test
+    @DisplayName("Send a POST request to create user and verify user is created")
+    public void createUserWithPostRequestTest() {
+        // Arrange
+        UserRegistrationRequestPOJO newUser = new UserRegistrationRequestPOJO(DataFaker.userName, DataFaker.userJob);
+
+        String expectedName = newUser.getName();
+        String expectedJob = newUser.getJob();
+
+        // Act
+        UserRegistrationResponsePOJO response = given()
+                .contentType(ContentType.JSON)
+                .body(newUser)
+                .when()
+                .post(Endpoints.USERS_ENDPOINT)
+                .then()
+                .statusCode(HTTP_CREATED)
+                .extract().as(UserRegistrationResponsePOJO.class);
+
+        String actualName = response.getName();
+        String actualJob = response.getJob();
+
+        String expectedId = response.getId();
+        String expectedCreatedAt = response.getId();
+
+        // Assert
+        Assertions.assertAll(
+                () -> assertEquals(expectedName, actualName, "Expected user's name: " + expectedName + ", but got: " + actualName),
+                () -> assertEquals(expectedJob, actualJob, "Expected user's job: " + expectedJob + ", but got: " + actualJob),
+                () -> assertNotNull(expectedId, "User's id should not be null"),
+                () -> assertNotNull(expectedCreatedAt, "'createdAt' value should not be null")
+
+        );
+
+
+    }
+
 }

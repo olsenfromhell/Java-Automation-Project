@@ -27,7 +27,7 @@ public class ResourceApiTests {
 
     @Test
     @DisplayName("Get resource list and assert it's info")
-    public void getResourceListInfo() {
+    public void getResourceListInfoTest() {
         // Arrange
         int expectedPage = 1;
         int expectedPerPage = 6;
@@ -56,18 +56,18 @@ public class ResourceApiTests {
         Assertions.assertAll(
                 () -> assertNotNull(expectedData, "Data should not be null"),
 
-                () -> assertEquals(expectedPage, actualPage, "Page number is not as expected"),
-                () -> assertEquals(expectedPerPage, actualPerPage, "Per page is not as expected"),
-                () -> assertEquals(expectedTotal, actualTotal, "Total is not as expected"),
-                () -> assertEquals(expectedTotalPages, actualTotalPages, "Total pages is not as expected"),
-                () -> assertEquals(expectedSupportUrl, actualSupportUrl, "Support URL is not as expected"),
-                () -> assertEquals(expectedSupportText, actualSupportText, "Support text is not as expected")
+                () -> assertEquals(expectedPage, actualPage, "Expected 'page' value: " + expectedPage + ", but got: " + actualPage),
+                () -> assertEquals(expectedPerPage, actualPerPage, "Expected 'per_page' value: " + expectedPerPage + ", but got: " + actualPerPage),
+                () -> assertEquals(expectedTotal, actualTotal, "Expected 'total' value: " + expectedTotal + ", but got: " + actualTotal),
+                () -> assertEquals(expectedTotalPages, actualTotalPages, "Expected 'total_pages' value: " + expectedTotal + ", but got: " + actualTotal),
+                () -> assertEquals(expectedSupportUrl, actualSupportUrl, "Expected 'url' value: " + expectedSupportUrl + ", but got: " + actualSupportUrl),
+                () -> assertEquals(expectedSupportText, actualSupportText, "Expected 'text' value: " + expectedSupportText + ", but got: " + actualSupportText)
         );
     }
 
     @Test
     @DisplayName("Get nonexistent resource list and assert empty body")
-    public void getEmptyResourceListInfo() {
+    public void getEmptyResourceListInfoTest() {
         // Arrange
         String expectedBody = "{}";
         String resourceId = "23";
