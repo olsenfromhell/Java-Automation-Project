@@ -20,7 +20,7 @@ All tests are run with ```./gradlew test``` from root.
 
 <hr>
 
-**UI tests contain:**
+**UI tests for [https://qaplayground.dev/](https://qaplayground.dev/) contain:**
 
 [Verify account test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/dev/qaplayground/VerifyAccountTest.java):
 - <i>Enter a valid code by pressing the key-up button or typing a number and assert success message.</i>
@@ -37,7 +37,7 @@ All tests are run with ```./gradlew test``` from root.
 
 <hr>
 
-**API tests contain:**
+**API tests for [https://reqres.in/](https://reqres.in/) contain:**
 
 [User tests](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/user/UserApiTests.java):
 - <i>Send a GET request to retrieve user information by user ID and assert user's details and support information.</i>
