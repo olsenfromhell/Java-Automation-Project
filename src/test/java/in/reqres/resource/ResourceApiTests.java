@@ -27,7 +27,7 @@ public class ResourceApiTests {
 
     @Test
     @DisplayName("Get resource list and assert it's info")
-    public void getResourcesInfo() {
+    public void getResourceListInfo() {
         // Arrange
         int expectedPage = 1;
         int expectedPerPage = 6;
@@ -67,7 +67,7 @@ public class ResourceApiTests {
 
     @Test
     @DisplayName("Get nonexistent resource list and assert empty body")
-    public void getEmptyResourcesInfo() {
+    public void getEmptyResourceListInfo() {
         // Arrange
         String expectedBody = "{}";
         String resourceId = "23";
