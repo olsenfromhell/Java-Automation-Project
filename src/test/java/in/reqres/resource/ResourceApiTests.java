@@ -15,7 +15,6 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
-import static java.net.HttpURLConnection.HTTP_OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -27,7 +26,7 @@ public class ResourceApiTests {
     }
 
     @Test
-    @DisplayName("Get resource list and assert info")
+    @DisplayName("Get resource list and assert it's info")
     public void getResourcesInfo() {
         // Arrange
         int expectedPage = 1;

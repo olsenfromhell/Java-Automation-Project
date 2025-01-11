@@ -20,7 +20,7 @@ public class UserApiTests {
     }
 
     @Test
-    @DisplayName("Get user by ID and assert the user's info")
+    @DisplayName("Get single user by ID and assert the user's info")
     public void getUserByIdTest() {
         // Arrange
         String userId = "2";
