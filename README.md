@@ -39,7 +39,11 @@ All tests are run with ```./gradlew test``` from root.
 
 **API tests contain:**
 
-[Get user by ID test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/GetUserByIdTest.java):
+[Get single user by ID test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/GetUserByIdTest.java):
 - <i>Send a GET request to retrieve user information by user ID and assert the user's details and support information.</i>
 - <i>Get nonexistent user by ID and assert empty body.</i>
+
+[Get resource list test](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/resource/ResourceApiTests.java):
+- <i>Get resource list and assert it's information.</i>
+- <i>Get nonexistent resource list and assert empty body.</i>
 
