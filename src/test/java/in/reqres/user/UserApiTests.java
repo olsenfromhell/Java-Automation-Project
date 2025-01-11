@@ -54,13 +54,13 @@ public class UserApiTests {
         Assertions.assertAll(
                 () -> assertNotNull(expectedData, "Data should not be null"),
 
-                () -> assertEquals(Integer.valueOf(userId), actualId, "User id is not as expected"),
-                () -> assertEquals(expectedEmail, actualEmail, "User email is not as expected"),
-                () -> assertEquals(expectedFirstName, actualFirstName, "User first name is not as expected"),
-                () -> assertEquals(expectedLastName, actualLastName, "User last name is not as expected"),
+                () -> assertEquals(Integer.valueOf(userId), actualId, "Expected user's id: " + userId + ", but got: " + actualId),
+                () -> assertEquals(expectedEmail, actualEmail, "Expected user's email: " + expectedEmail + ", but got: " + actualEmail),
+                () -> assertEquals(expectedFirstName, actualFirstName, "Expected user's first name: " + expectedFirstName + ", but got: " + actualFirstName),
+                () -> assertEquals(expectedLastName, actualLastName, "Expected user's name: " + expectedLastName + ", but got: " + actualLastName),
 
-                () -> assertEquals(expectedSupportUrl, actualSupportUrl, "User support url is not as expected"),
-                () -> assertEquals(expectedSupportText, actualSupportText, "User support text is not as expected")
+                () -> assertEquals(expectedSupportUrl, actualSupportUrl, "Expected user's support url: " + expectedSupportUrl + ", but got: " + actualSupportUrl),
+                () -> assertEquals(expectedSupportText, actualSupportText, "Expected user's text: " + expectedSupportText + ", but got: " + actualSupportText)
         );
 
     }
