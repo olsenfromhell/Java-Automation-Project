@@ -5,4 +5,6 @@ public class Endpoints {
 
     // endpoints
     public static final String USERS_ENDPOINT = "api/users/";
+    public static final String RESOURCES_ENDPOINT = "api/unknown/";
+
 }

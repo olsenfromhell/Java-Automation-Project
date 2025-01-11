@@ -1,11 +1,12 @@
 package in.reqres.models.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class UserDataPOJO {
+public class UserPOJO {
     private Data data;
     private Support support;
 
@@ -14,8 +15,10 @@ public class UserDataPOJO {
     public static class Data {
         private int id;
         private String email;
-        private String first_name;
-        private String last_name;
+        @JsonProperty("first_name")
+        private String firstName;
+        @JsonProperty("last_name")
+        private String lastName;
         private String avatar;
 
     }
