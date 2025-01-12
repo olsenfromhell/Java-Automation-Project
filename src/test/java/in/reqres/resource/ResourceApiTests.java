@@ -54,14 +54,27 @@ public class ResourceApiTests {
 
         // Assert
         Assertions.assertAll(
-                () -> assertNotNull(expectedData, "Data should not be null"),
-
-                () -> assertEquals(expectedPage, actualPage, "Expected 'page' value: " + expectedPage + ", but got: " + actualPage),
-                () -> assertEquals(expectedPerPage, actualPerPage, "Expected 'per_page' value: " + expectedPerPage + ", but got: " + actualPerPage),
-                () -> assertEquals(expectedTotal, actualTotal, "Expected 'total' value: " + expectedTotal + ", but got: " + actualTotal),
-                () -> assertEquals(expectedTotalPages, actualTotalPages, "Expected 'total_pages' value: " + expectedTotal + ", but got: " + actualTotal),
-                () -> assertEquals(expectedSupportUrl, actualSupportUrl, "Expected 'url' value: " + expectedSupportUrl + ", but got: " + actualSupportUrl),
-                () -> assertEquals(expectedSupportText, actualSupportText, "Expected 'text' value: " + expectedSupportText + ", but got: " + actualSupportText)
+                () -> assertNotNull(
+                        expectedData, "Data should not be null"
+                ),
+                () -> assertEquals(
+                        expectedPage, actualPage, "Expected 'page' value: " + expectedPage + ", but got: " + actualPage
+                ),
+                () -> assertEquals(
+                        expectedPerPage, actualPerPage, "Expected 'per_page' value: " + expectedPerPage + ", but got: " + actualPerPage
+                ),
+                () -> assertEquals(
+                        expectedTotal, actualTotal, "Expected 'total' value: " + expectedTotal + ", but got: " + actualTotal
+                ),
+                () -> assertEquals(
+                        expectedTotalPages, actualTotalPages, "Expected 'total_pages' value: " + expectedTotalPages + ", but got: " + actualTotalPages
+                ),
+                () -> assertEquals(
+                        expectedSupportUrl, actualSupportUrl, "Expected 'url' value: " + expectedSupportUrl + ", but got: " + actualSupportUrl
+                ),
+                () -> assertEquals(
+                        expectedSupportText, actualSupportText, "Expected 'text' value: " + expectedSupportText + ", but got: " + actualSupportText
+                )
         );
     }
 

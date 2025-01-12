@@ -52,15 +52,27 @@ public class UserApiTests {
 
         // Assert
         Assertions.assertAll(
-                () -> assertNotNull(expectedData, "Data should not be null"),
-
-                () -> assertEquals(Integer.valueOf(userId), actualId, "Expected user's id: " + userId + ", but got: " + actualId),
-                () -> assertEquals(expectedEmail, actualEmail, "Expected user's email: " + expectedEmail + ", but got: " + actualEmail),
-                () -> assertEquals(expectedFirstName, actualFirstName, "Expected user's first name: " + expectedFirstName + ", but got: " + actualFirstName),
-                () -> assertEquals(expectedLastName, actualLastName, "Expected user's name: " + expectedLastName + ", but got: " + actualLastName),
-
-                () -> assertEquals(expectedSupportUrl, actualSupportUrl, "Expected user's support url: " + expectedSupportUrl + ", but got: " + actualSupportUrl),
-                () -> assertEquals(expectedSupportText, actualSupportText, "Expected user's text: " + expectedSupportText + ", but got: " + actualSupportText)
+                () -> assertNotNull(
+                        expectedData, "Data should not be null"
+                ),
+                () -> assertEquals(
+                        Integer.valueOf(userId), actualId, "Expected user's id: " + userId + ", but got: " + actualId
+                ),
+                () -> assertEquals(
+                        expectedEmail, actualEmail, "Expected user's email: " + expectedEmail + ", but got: " + actualEmail
+                ),
+                () -> assertEquals(
+                        expectedFirstName, actualFirstName, "Expected user's first name: " + expectedFirstName + ", but got: " + actualFirstName
+                ),
+                () -> assertEquals(
+                        expectedLastName, actualLastName, "Expected user's name: " + expectedLastName + ", but got: " + actualLastName
+                ),
+                () -> assertEquals(
+                        expectedSupportUrl, actualSupportUrl, "Expected user's support url: " + expectedSupportUrl + ", but got: " + actualSupportUrl
+                ),
+                () -> assertEquals(
+                        expectedSupportText, actualSupportText, "Expected user's text: " + expectedSupportText + ", but got: " + actualSupportText
+                )
         );
 
     }
@@ -114,14 +126,19 @@ public class UserApiTests {
 
         // Assert
         Assertions.assertAll(
-                () -> assertEquals(expectedName, actualName, "Expected user's name: " + expectedName + ", but got: " + actualName),
-                () -> assertEquals(expectedJob, actualJob, "Expected user's job: " + expectedJob + ", but got: " + actualJob),
-                () -> assertNotNull(expectedId, "User's id should not be null"),
-                () -> assertNotNull(expectedCreatedAt, "'createdAt' value should not be null")
+                () -> assertEquals(
+                        expectedName, actualName, "Expected user's name: " + expectedName + ", but got: " + actualName
+                ),
+                () -> assertEquals(
+                        expectedJob, actualJob, "Expected user's job: " + expectedJob + ", but got: " + actualJob
+                ),
+                () -> assertNotNull(
+                        expectedId, "User's id should not be null"
+                ),
+                () -> assertNotNull(
+                        expectedCreatedAt, "'createdAt' value should not be null"
+                )
 
         );
-
-
     }
-
 }
