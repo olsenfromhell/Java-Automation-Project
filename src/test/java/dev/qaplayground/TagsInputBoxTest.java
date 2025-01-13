@@ -27,7 +27,9 @@ public class TagsInputBoxTest extends TestBase {
         int actualTagCount = tagsInputBox.getTagCount();
 
         // Assert
-        Assertions.assertEquals(expectedTagCount, actualTagCount, "Tag has not been added");
+        Assertions.assertEquals(
+                expectedTagCount, actualTagCount, "Expected tag's count: " + expectedTagCount + ", but got: " + actualTagCount
+        );
     }
 
     @Test
@@ -42,7 +44,9 @@ public class TagsInputBoxTest extends TestBase {
         int actualTagCount = tagsInputBox.getTagCount();
 
         // Assert
-        Assertions.assertEquals(expectedTagCount, actualTagCount, "Tag has not been removed");
+        Assertions.assertEquals(
+                expectedTagCount, actualTagCount, "Expected tag's count: " + expectedTagCount + ", but got: " + actualTagCount
+        );
     }
 
     @AfterAll

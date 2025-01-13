@@ -22,14 +22,16 @@ public class UploadFileTest extends TestBase {
     public void uploadImageTest() {
         // Arrange
         File image = new File("src/test/resources/testfiles/funny_cat.jpeg");
-        String expected = "funny_cat.jpeg";
+        String expectedFileName = "funny_cat.jpeg";
 
         // Act
         uploadFilePage.uploadImage(image);
-        String actual = uploadFilePage.returnUploadedImageName();
+        String actualFileName = uploadFilePage.returnUploadedImageName();
 
         // Assert
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(
+                expectedFileName, actualFileName, "Expected file's name: " + expectedFileName + ", but got: " + actualFileName
+        );
     }
 
     @AfterAll

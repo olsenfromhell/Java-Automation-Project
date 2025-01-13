@@ -27,12 +27,21 @@ public class DownloadFileTest extends TestBase {
         // Act
         File downloadedFile = $("[id='file']").download();
 
+        String actualFileName = downloadedFile.getName();
+        long actualFileSize = downloadedFile.length();
+
+
         // Assert
         Assertions.assertAll(
                 () -> Assertions.assertTrue(downloadedFile.exists(), "File is not downloaded"),
-                () -> Assertions.assertTrue(downloadedFile.length() > 0, "File must be not empty"),
-                () -> Assertions.assertEquals(expectedFileName, downloadedFile.getName(), "Name of the file must be 'sample.pdf'"),
-                () -> Assertions.assertEquals(expectedFileSize, downloadedFile.length(), "File size must be 1042157 Byte")
+                () -> Assertions.assertTrue(actualFileSize > 0, "File must be not empty"),
+
+                () -> Assertions.assertEquals(
+                        expectedFileName, actualFileName, "Expected file's name: " + expectedFileName + ", but got: " + actualFileName
+                ),
+                () -> Assertions.assertEquals(
+                        expectedFileSize, actualFileSize, "Expected file's size: " + expectedFileSize + ", but got: " + actualFileSize
+                )
         );
     }
 

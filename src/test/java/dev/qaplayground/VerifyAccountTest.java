@@ -27,7 +27,9 @@ public class VerifyAccountTest extends TestBase {
         String actualMessage = verifyAccount.returnTextFromSuccessModal();
 
         // Assert
-        Assertions.assertEquals(expectedMessage, actualMessage, "'Success' text not found");
+        Assertions.assertEquals(
+                expectedMessage, actualMessage, "Expected message: " + expectedMessage + ", but got: " + actualMessage
+        );
     }
 
     @AfterAll
