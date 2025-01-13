@@ -28,7 +28,7 @@ public class TagsInputBoxTest extends TestBase {
 
         // Assert
         Assertions.assertEquals(
-                expectedTagCount, actualTagCount, "Expected tag's count: " + expectedTagCount + ", but got: " + actualTagCount
+                expectedTagCount, actualTagCount, "Expected tag count: " + expectedTagCount + ", but got: " + actualTagCount
         );
     }
 
@@ -45,7 +45,7 @@ public class TagsInputBoxTest extends TestBase {
 
         // Assert
         Assertions.assertEquals(
-                expectedTagCount, actualTagCount, "Expected tag's count: " + expectedTagCount + ", but got: " + actualTagCount
+                expectedTagCount, actualTagCount, "Expected tag count: " + expectedTagCount + ", but got: " + actualTagCount
         );
     }
 

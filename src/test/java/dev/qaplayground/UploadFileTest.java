@@ -18,7 +18,7 @@ public class UploadFileTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Upload an image file and assert the file's name")
+    @DisplayName("Upload an image file and assert the file name")
     public void uploadImageTest() {
         // Arrange
         File image = new File("src/test/resources/testfiles/funny_cat.jpeg");
@@ -30,7 +30,7 @@ public class UploadFileTest extends TestBase {
 
         // Assert
         Assertions.assertEquals(
-                expectedFileName, actualFileName, "Expected file's name: " + expectedFileName + ", but got: " + actualFileName
+                expectedFileName, actualFileName, "Expected file name: " + expectedFileName + ", but got: " + actualFileName
         );
     }
 

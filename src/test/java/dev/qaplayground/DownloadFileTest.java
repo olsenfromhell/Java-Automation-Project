@@ -37,10 +37,10 @@ public class DownloadFileTest extends TestBase {
                 () -> Assertions.assertTrue(actualFileSize > 0, "File must be not empty"),
 
                 () -> Assertions.assertEquals(
-                        expectedFileName, actualFileName, "Expected file's name: " + expectedFileName + ", but got: " + actualFileName
+                        expectedFileName, actualFileName, "Expected file name: " + expectedFileName + ", but got: " + actualFileName
                 ),
                 () -> Assertions.assertEquals(
-                        expectedFileSize, actualFileSize, "Expected file's size: " + expectedFileSize + ", but got: " + actualFileSize
+                        expectedFileSize, actualFileSize, "Expected file size: " + expectedFileSize + ", but got: " + actualFileSize
                 )
         );
     }

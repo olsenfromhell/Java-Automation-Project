@@ -133,7 +133,7 @@ public class UserApiTests {
                         expectedJob, actualJob, "Expected user's job: " + expectedJob + ", but got: " + actualJob
                 ),
                 () -> assertNotNull(
-                        expectedId, "User's id should not be null"
+                        expectedId, "User id should not be null"
                 ),
                 () -> assertNotNull(
                         expectedCreatedAt, "'createdAt' value should not be null"
