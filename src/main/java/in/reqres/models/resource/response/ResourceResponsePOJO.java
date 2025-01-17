@@ -1,4 +1,4 @@
-package in.reqres.models.resource;
+package in.reqres.models.resource.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ResourcePOJO {
+public class ResourceResponsePOJO {
 
     private List<Data> data;
     private Support support;

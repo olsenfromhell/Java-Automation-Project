@@ -9,5 +9,9 @@ public class DataFaker {
     public static String anyBeerName = faker.beer().name();
     public static String userName = faker.name().name();
     public static String userJob = faker.job().title();
+    public static String userEmail = faker.internet().emailAddress();
+    public static String userPassword = faker.internet().password();
+
+
 
 }

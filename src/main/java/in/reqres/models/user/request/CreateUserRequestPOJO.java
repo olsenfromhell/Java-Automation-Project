@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class UserRegistrationRequestPOJO {
+public class CreateUserRequestPOJO {
     private String name;
     private String job;
 }

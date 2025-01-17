@@ -49,3 +49,7 @@ All tests are run with ```./gradlew test``` from root.
 - <i>Get resource list and assert it's information.</i>
 - <i>Get nonexistent resource list and assert empty body.</i>
 
+[Registration tests](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/resource/RegisterApiTests.java):
+- <i>Register new user and check response.</i>
+- <i>Try to register user without password and check error message.</i>
+

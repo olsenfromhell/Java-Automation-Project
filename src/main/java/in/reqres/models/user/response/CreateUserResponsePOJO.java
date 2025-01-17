@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRegistrationResponsePOJO {
+public class CreateUserResponsePOJO {
     private String name;
     private String job;
     private String id;

@@ -2,7 +2,7 @@ package in.reqres.resource;
 
 import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
-import in.reqres.models.resource.ResourcePOJO;
+import in.reqres.models.resource.response.ResourceResponsePOJO;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
@@ -15,8 +15,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ResourceApiTests {
 
@@ -38,13 +37,13 @@ public class ResourceApiTests {
         String expectedSupportText = "Tired of writing endless social media content? Let Content Caddy generate it for you.";
 
         // Act
-        ResourcePOJO response = given()
+        ResourceResponsePOJO response = given()
                 .contentType(ContentType.JSON)
                 .get(Endpoints.RESOURCES_ENDPOINT)
                 .then()
-                .extract().as(ResourcePOJO.class);
+                .extract().as(ResourceResponsePOJO.class);
 
-        List<ResourcePOJO.Data> expectedData = response.getData();
+        List<ResourceResponsePOJO.Data> expectedData = response.getData();
         int actualPage = response.getPage();
         int actualPerPage = response.getPerPage();
         int actualTotal = response.getTotal();
@@ -56,6 +55,9 @@ public class ResourceApiTests {
         Assertions.assertAll(
                 () -> assertNotNull(
                         expectedData, "Data should not be null"
+                ),
+                () -> assertFalse(
+                        expectedData.isEmpty(), "Data should not be empty"
                 ),
                 () -> assertEquals(
                         expectedPage, actualPage, "Expected 'page' value: " + expectedPage + ", but got: " + actualPage

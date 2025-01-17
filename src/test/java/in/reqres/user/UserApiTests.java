@@ -3,8 +3,8 @@ package in.reqres.user;
 import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.user.response.UserInfoResponsePOJO;
-import in.reqres.models.user.request.UserRegistrationRequestPOJO;
-import in.reqres.models.user.response.UserRegistrationResponsePOJO;
+import in.reqres.models.user.request.CreateUserRequestPOJO;
+import in.reqres.models.user.response.CreateUserResponsePOJO;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
@@ -103,20 +103,20 @@ public class UserApiTests {
     @DisplayName("Send a POST request to create user and verify user is created")
     public void createUserWithPostRequestTest() {
         // Arrange
-        UserRegistrationRequestPOJO newUser = new UserRegistrationRequestPOJO(DataFaker.userName, DataFaker.userJob);
+        CreateUserRequestPOJO newUser = new CreateUserRequestPOJO(DataFaker.userName, DataFaker.userJob);
 
         String expectedName = newUser.getName();
         String expectedJob = newUser.getJob();
 
         // Act
-        UserRegistrationResponsePOJO response = given()
+        CreateUserResponsePOJO response = given()
                 .contentType(ContentType.JSON)
                 .body(newUser)
                 .when()
                 .post(Endpoints.USERS_ENDPOINT)
                 .then()
                 .statusCode(HTTP_CREATED)
-                .extract().as(UserRegistrationResponsePOJO.class);
+                .extract().as(CreateUserResponsePOJO.class);
 
         String actualName = response.getName();
         String actualJob = response.getJob();
