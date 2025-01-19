@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 
 import static com.codeborne.selenide.Selenide.$;
 
+@Tag("UI")
 public class DownloadFileTest extends TestBase {
 
     @BeforeEach

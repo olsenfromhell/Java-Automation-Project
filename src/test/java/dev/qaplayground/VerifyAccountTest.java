@@ -5,6 +5,7 @@ import dev.qaplayground.pages.VerifyAccountPage;
 import dev.qaplayground.endpoints.Pages;
 import org.junit.jupiter.api.*;
 
+@Tag("UI")
 public class VerifyAccountTest extends TestBase {
     private VerifyAccountPage verifyAccount;
 

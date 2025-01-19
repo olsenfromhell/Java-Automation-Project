@@ -5,6 +5,7 @@ import dev.qaplayground.pages.TagsInputBoxPage;
 import dev.qaplayground.endpoints.Pages;
 import org.junit.jupiter.api.*;
 
+@Tag("UI")
 public class TagsInputBoxTest extends TestBase {
     private TagsInputBoxPage tagsInputBox;
 

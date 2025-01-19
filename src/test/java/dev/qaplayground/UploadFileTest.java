@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 
 import java.io.File;
 
+@Tag("UI")
 public class UploadFileTest extends TestBase {
     private UploadFilePage uploadFilePage;
 

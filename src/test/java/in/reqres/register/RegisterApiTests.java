@@ -6,16 +6,13 @@ import in.reqres.models.register.request.RegisterRequestPOJO;
 import in.reqres.models.register.response.SuccessfulRegisterResponsePOJO;
 import in.reqres.models.register.response.UnsuccsessfulRegisterResponsePOJO;
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 import static java.net.HttpURLConnection.HTTP_OK;
 
-
+@Tag("API")
 public class RegisterApiTests {
 
     /**

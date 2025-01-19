@@ -5,10 +5,7 @@ import in.reqres.endpoints.Endpoints;
 import in.reqres.models.resource.response.ResourceResponsePOJO;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 
 import java.util.List;
@@ -17,6 +14,7 @@ import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("API")
 public class ResourceApiTests {
 
     @BeforeEach

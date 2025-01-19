@@ -16,6 +16,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@Tag("API")
 public class UserApiTests {
 
     @BeforeEach
