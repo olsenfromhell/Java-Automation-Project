@@ -9,6 +9,10 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
   $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update && apt-get install -y docker-ce-cli
 
+# please review all the latest versions here:
+# https://googlechromelabs.github.io/chrome-for-testing/
+ENV CHROMEDRIVER_VERSION=132.0.6834.83
+
 ### install chrome
 RUN apt-get update && apt-get install -y wget && apt-get install -y zip
 RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
