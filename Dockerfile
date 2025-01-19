@@ -9,10 +9,5 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
   $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update && apt-get install -y docker-ce-cli
 
-## install chrome
-RUN apt-get install -y wget
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
-
 USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
