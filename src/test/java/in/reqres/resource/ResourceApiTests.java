@@ -7,12 +7,12 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 
-
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static org.junit.jupiter.api.Assertions.*;
+
 
 @Tag("API")
 public class ResourceApiTests {
@@ -98,5 +98,28 @@ public class ResourceApiTests {
         // Assert
         Assertions.assertEquals(expectedBody, actualBody, "The response body is not empty");
     }
+
+
+    @Test
+    @DisplayName("Verify 'years' key values are sorted in ascending order in response")
+    public void verifyYearsSortedTest() {
+        // Arrange
+
+        // Act
+        List<ResourceResponsePOJO.Data> response = given()
+                .contentType(ContentType.JSON)
+                .when()
+                .get(Endpoints.RESOURCES_ENDPOINT)
+                .then()
+                .extract().body().jsonPath().getList("data", ResourceResponsePOJO.Data.class);
+
+        List<Integer> actualYears = response.stream().map(ResourceResponsePOJO.Data::getYear).toList();
+        List<Integer> expectedYears = actualYears.stream().sorted().toList();
+
+        // Assert
+        Assertions.assertEquals(expectedYears, actualYears, "The 'years' key values are not sorted in ascending order");
+    }
+
 }
+
 

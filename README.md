@@ -48,6 +48,7 @@ All tests are run with ```./gradlew test``` from root.
 [Resource list tests](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/resource/ResourceApiTests.java):
 - <i>Get resource list and assert it's information.</i>
 - <i>Get nonexistent resource list and assert empty body.</i>
+- <i>Verify 'years' key values are sorted in ascending order in response.</i>
 
 [Registration tests](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/register/RegisterApiTests.java):
 - <i>Register new user and check response.</i>
