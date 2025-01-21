@@ -16,7 +16,7 @@ The utils and frameworks used in this project include:
 
 The project is in development and I update it from time to time.
 
-All tests are run with ```./gradlew test``` from root.
+All tests are run with ```./gradlew clean test``` from root.
 
 <hr>
 
