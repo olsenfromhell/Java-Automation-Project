@@ -2,19 +2,24 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.endpoints.Endpoints;
+import dev.qaplayground.pages.DownloadFilePage;
 import org.junit.jupiter.api.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
 
 @Tag("UI")
 public class DownloadFileTest extends TestBase {
+    private DownloadFilePage downloadFilePage;
+
     @BeforeEach
     public void setUp() {
         super.setUp();
         Selenide.open(Endpoints.DOWNLOAD_FILE_PAGE);
+        downloadFilePage = new DownloadFilePage();
     }
 
     @Test
@@ -25,16 +30,13 @@ public class DownloadFileTest extends TestBase {
         long expectedFileSize = 1042157;
 
         // Act
-        File downloadedFile = $("[id='file']").download();
+        File downloadedFile = downloadFilePage.downloadFile();
 
         String actualFileName = downloadedFile.getName();
         long actualFileSize = downloadedFile.length();
 
         // Assert
         Assertions.assertAll(
-                () -> Assertions.assertTrue(downloadedFile.exists(), "File is not downloaded"),
-                () -> Assertions.assertTrue(actualFileSize > 0, "File must be not empty"),
-
                 () -> Assertions.assertEquals(
                         expectedFileName, actualFileName, "Expected file name: " + expectedFileName + ", but got: " + actualFileName
                 ),
