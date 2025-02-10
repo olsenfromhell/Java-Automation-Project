@@ -2,7 +2,7 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.pages.TagsInputBoxPage;
-import dev.qaplayground.endpoints.Pages;
+import dev.qaplayground.endpoints.Endpoints;
 import org.junit.jupiter.api.*;
 
 @Tag("UI")
@@ -12,7 +12,7 @@ public class TagsInputBoxTest extends TestBase {
     @BeforeEach
     public void setUp() {
         super.setUp();
-        Selenide.open(Pages.TAGS_INPUT_BOX_PAGE);
+        Selenide.open(Endpoints.TAGS_INPUT_BOX_PAGE);
         tagsInputBox = new TagsInputBoxPage();
     }
 

@@ -2,7 +2,7 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.pages.UploadFilePage;
-import dev.qaplayground.endpoints.Pages;
+import dev.qaplayground.endpoints.Endpoints;
 import org.junit.jupiter.api.*;
 
 import java.io.File;
@@ -14,7 +14,7 @@ public class UploadFileTest extends TestBase {
     @BeforeEach
     public void setUp() {
         super.setUp();
-        Selenide.open(Pages.UPLOAD_FILE_PAGE);
+        Selenide.open(Endpoints.UPLOAD_FILE_PAGE);
         uploadFilePage = new UploadFilePage();
     }
 

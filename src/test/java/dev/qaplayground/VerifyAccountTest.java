@@ -2,7 +2,7 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.pages.VerifyAccountPage;
-import dev.qaplayground.endpoints.Pages;
+import dev.qaplayground.endpoints.Endpoints;
 import org.junit.jupiter.api.*;
 
 @Tag("UI")
@@ -12,7 +12,7 @@ public class VerifyAccountTest extends TestBase {
     @BeforeEach
     public void setUp() {
         super.setUp();
-        Selenide.open(Pages.VERIFY_ACCOUNT_PAGE);
+        Selenide.open(Endpoints.VERIFY_ACCOUNT_PAGE);
         verifyAccount = new VerifyAccountPage();
     }
 

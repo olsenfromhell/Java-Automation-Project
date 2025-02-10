@@ -1,7 +1,7 @@
 package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
-import dev.qaplayground.endpoints.Pages;
+import dev.qaplayground.endpoints.Endpoints;
 import org.junit.jupiter.api.*;
 
 import java.io.File;
@@ -11,11 +11,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 @Tag("UI")
 public class DownloadFileTest extends TestBase {
-
     @BeforeEach
     public void setUp() {
         super.setUp();
-        Selenide.open(Pages.DOWNLOAD_FILE_PAGE);
+        Selenide.open(Endpoints.DOWNLOAD_FILE_PAGE);
     }
 
     @Test
@@ -30,7 +29,6 @@ public class DownloadFileTest extends TestBase {
 
         String actualFileName = downloadedFile.getName();
         long actualFileSize = downloadedFile.length();
-
 
         // Assert
         Assertions.assertAll(
