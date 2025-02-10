@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SuccessfulRegisterResponsePOJO {
+public class SuccessfulRegisterResponse {
     private int id;
     private String token;
 }

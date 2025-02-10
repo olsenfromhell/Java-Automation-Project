@@ -2,7 +2,7 @@ package in.reqres.resource;
 
 import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
-import in.reqres.models.resource.response.ResourceResponsePOJO;
+import in.reqres.models.resource.response.ResourceResponse;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
@@ -35,13 +35,13 @@ public class ResourceApiTests {
         String expectedSupportText = "Tired of writing endless social media content? Let Content Caddy generate it for you.";
 
         // Act
-        ResourceResponsePOJO response = given()
+        ResourceResponse response = given()
                 .contentType(ContentType.JSON)
                 .get(Endpoints.RESOURCES_ENDPOINT)
                 .then()
-                .extract().as(ResourceResponsePOJO.class);
+                .extract().as(ResourceResponse.class);
 
-        List<ResourceResponsePOJO.Data> expectedData = response.getData();
+        List<ResourceResponse.Data> expectedData = response.getData();
         int actualPage = response.getPage();
         int actualPerPage = response.getPerPage();
         int actualTotal = response.getTotal();
@@ -106,14 +106,14 @@ public class ResourceApiTests {
         // Arrange
 
         // Act
-        List<ResourceResponsePOJO.Data> response = given()
+        List<ResourceResponse.Data> response = given()
                 .contentType(ContentType.JSON)
                 .when()
                 .get(Endpoints.RESOURCES_ENDPOINT)
                 .then()
-                .extract().body().jsonPath().getList("data", ResourceResponsePOJO.Data.class);
+                .extract().body().jsonPath().getList("data", ResourceResponse.Data.class);
 
-        List<Integer> actualYears = response.stream().map(ResourceResponsePOJO.Data::getYear).toList();
+        List<Integer> actualYears = response.stream().map(ResourceResponse.Data::getYear).toList();
         List<Integer> expectedYears = actualYears.stream().sorted().toList();
 
         // Assert

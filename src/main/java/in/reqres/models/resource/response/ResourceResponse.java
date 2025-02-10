@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ResourceResponsePOJO {
+public class ResourceResponse {
 
     private List<Data> data;
     private Support support;

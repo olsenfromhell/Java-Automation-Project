@@ -8,11 +8,9 @@ import java.io.File;
 import static com.codeborne.selenide.Selenide.$;
 
 public class UploadFilePage {
-    // locators
     private static final SelenideElement uploadImageInput = $("[id='file-input']");
     private static final SelenideElement uploadedImageName = $("figure > figcaption");
 
-    // methods
     @Step("Upload image")
     public void uploadImage(File image) {
         uploadImageInput.uploadFile(image);

@@ -50,8 +50,8 @@ public class TagsInputBoxTest extends TestBase {
         );
     }
 
-    @AfterAll
-    public static void tearDown() {
-        TestBase.tearDown();
+    @AfterEach
+    public void tearDown() {
+        super.tearDown();
     }
 }

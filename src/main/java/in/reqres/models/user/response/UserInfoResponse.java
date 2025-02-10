@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class UserInfoResponsePOJO {
+public class UserInfoResponse {
     private Data data;
     private Support support;
 

@@ -2,9 +2,9 @@ package in.reqres.register;
 
 import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
-import in.reqres.models.register.request.RegisterRequestPOJO;
-import in.reqres.models.register.response.SuccessfulRegisterResponsePOJO;
-import in.reqres.models.register.response.UnsuccsessfulRegisterResponsePOJO;
+import in.reqres.models.register.request.RegisterRequest;
+import in.reqres.models.register.response.SuccessfulRegisterResponse;
+import in.reqres.models.register.response.UnsuccsessfulRegisterResponse;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
 
@@ -32,17 +32,17 @@ public class RegisterApiTests {
         int expectedId = 4;
         String expectedToken = "QpwL5tke4Pnpja7X4";
 
-        RegisterRequestPOJO newUser = new RegisterRequestPOJO("eve.holt@reqres.in", "pistol");
+        RegisterRequest newUser = new RegisterRequest("eve.holt@reqres.in", "pistol");
 
         // Act
-        SuccessfulRegisterResponsePOJO response = given()
+        SuccessfulRegisterResponse response = given()
                 .contentType(ContentType.JSON)
                 .body(newUser)
                 .when()
                 .post(Endpoints.REGISTER_ENDPOINT)
                 .then()
                 .statusCode(HTTP_OK)
-                .extract().as(SuccessfulRegisterResponsePOJO.class);
+                .extract().as(SuccessfulRegisterResponse.class);
 
         int actualId = response.getId();
         String actualToken = response.getToken();
@@ -62,19 +62,19 @@ public class RegisterApiTests {
     @DisplayName("Try to register user without password and check error message")
     public void registerUserWithoutPasswordTest() {
         // Arrange
-        RegisterRequestPOJO newUser = new RegisterRequestPOJO("sydney@fife");
+        RegisterRequest newUser = new RegisterRequest("sydney@fife");
 
         String expectedErrorMessage = "Missing password";
 
         // Act
-        UnsuccsessfulRegisterResponsePOJO response = given()
+        UnsuccsessfulRegisterResponse response = given()
                 .contentType(ContentType.JSON)
                 .body(newUser)
                 .when()
                 .post(Endpoints.REGISTER_ENDPOINT)
                 .then()
                 .statusCode(HTTP_BAD_REQUEST)
-                .extract().as(UnsuccsessfulRegisterResponsePOJO.class);
+                .extract().as(UnsuccsessfulRegisterResponse.class);
 
         String actualErrorMessage = response.getError();
 

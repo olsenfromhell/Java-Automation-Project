@@ -7,11 +7,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class RegisterRequestPOJO {
+public class RegisterRequest {
     private String email;
     private String password;
 
-    public RegisterRequestPOJO(String email) {
+    public RegisterRequest(String email) {
         this.email = email;
     }
 }

@@ -2,9 +2,9 @@ package in.reqres.user;
 
 import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
-import in.reqres.models.user.response.UserInfoResponsePOJO;
-import in.reqres.models.user.request.CreateUserRequestPOJO;
-import in.reqres.models.user.response.CreateUserResponsePOJO;
+import in.reqres.models.user.response.UserInfoResponse;
+import in.reqres.models.user.request.CreateUserRequest;
+import in.reqres.models.user.response.CreateUserResponse;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
@@ -38,12 +38,12 @@ public class UserApiTests {
         String expectedSupportText = "Tired of writing endless social media content? Let Content Caddy generate it for you.";
 
         // Act
-        UserInfoResponsePOJO response = given()
+        UserInfoResponse response = given()
                 .contentType(ContentType.JSON)
                 .get(Endpoints.USERS_ENDPOINT + userId)
-                .then().extract().as(UserInfoResponsePOJO.class);
+                .then().extract().as(UserInfoResponse.class);
 
-        UserInfoResponsePOJO.Data expectedData = response.getData();
+        UserInfoResponse.Data expectedData = response.getData();
         int actualId = response.getData().getId();
         String actualEmail = response.getData().getEmail();
         String actualFirstName = response.getData().getFirstName();
@@ -104,20 +104,20 @@ public class UserApiTests {
     @DisplayName("Send a POST request to create user and verify user is created")
     public void createUserWithPostRequestTest() {
         // Arrange
-        CreateUserRequestPOJO newUser = new CreateUserRequestPOJO(DataFaker.userName, DataFaker.userJob);
+        CreateUserRequest newUser = new CreateUserRequest(DataFaker.userName, DataFaker.userJob);
 
         String expectedName = newUser.getName();
         String expectedJob = newUser.getJob();
 
         // Act
-        CreateUserResponsePOJO response = given()
+        CreateUserResponse response = given()
                 .contentType(ContentType.JSON)
                 .body(newUser)
                 .when()
                 .post(Endpoints.USERS_ENDPOINT)
                 .then()
                 .statusCode(HTTP_CREATED)
-                .extract().as(CreateUserResponsePOJO.class);
+                .extract().as(CreateUserResponse.class);
 
         String actualName = response.getName();
         String actualJob = response.getJob();
