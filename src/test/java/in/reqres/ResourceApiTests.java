@@ -1,4 +1,4 @@
-package in.reqres.resource;
+package in.reqres;
 
 import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
