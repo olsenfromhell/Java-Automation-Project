@@ -4,7 +4,7 @@ import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.register.request.RegisterRequest;
 import in.reqres.models.register.response.SuccessfulRegisterResponse;
-import in.reqres.models.register.response.UnsuccsessfulRegisterResponse;
+import in.reqres.models.register.response.UnsuccessfulRegisterResponse;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
 
@@ -67,14 +67,14 @@ public class RegisterApiTests {
         String expectedErrorMessage = "Missing password";
 
         // Act
-        UnsuccsessfulRegisterResponse response = given()
+        UnsuccessfulRegisterResponse response = given()
                 .contentType(ContentType.JSON)
                 .body(newUser)
                 .when()
                 .post(Endpoints.REGISTER_ENDPOINT)
                 .then()
                 .statusCode(HTTP_BAD_REQUEST)
-                .extract().as(UnsuccsessfulRegisterResponse.class);
+                .extract().as(UnsuccessfulRegisterResponse.class);
 
         String actualErrorMessage = response.getError();
 

@@ -1,17 +1,14 @@
 package in.reqres.models.user.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
+@Data
 public class UserInfoResponse {
     private Data data;
     private Support support;
 
-    @Setter
-    @Getter
+    @lombok.Data
     public static class Data {
         private int id;
         private String email;
@@ -20,14 +17,11 @@ public class UserInfoResponse {
         @JsonProperty("last_name")
         private String lastName;
         private String avatar;
-
     }
 
-    @Setter
-    @Getter
+    @lombok.Data
     public static class Support {
         private String url;
         private String text;
-
     }
 }

@@ -1,15 +1,14 @@
 package in.reqres.models.resource.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 public class ResourceResponse {
-
     private List<Data> data;
     private Support support;
 
@@ -20,8 +19,7 @@ public class ResourceResponse {
     @JsonProperty("total_pages")
     private int totalPages;
 
-    @Getter
-    @Setter
+    @lombok.Data
     public static class Data {
         private int id;
         private String name;
@@ -31,11 +29,9 @@ public class ResourceResponse {
         private String pantoneValue;
     }
 
-    @Getter
-    @Setter
+    @lombok.Data
     public static class Support {
         private String url;
         private String text;
-
     }
 }

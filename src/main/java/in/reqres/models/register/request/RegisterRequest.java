@@ -1,11 +1,9 @@
 package in.reqres.models.register.request;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 public class RegisterRequest {
     private String email;
