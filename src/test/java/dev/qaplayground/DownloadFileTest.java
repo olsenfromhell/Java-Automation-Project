@@ -8,9 +8,6 @@ import org.junit.jupiter.api.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
-
 @Tag("UI")
 public class DownloadFileTest extends TestBase {
     private DownloadFilePage downloadFilePage;
