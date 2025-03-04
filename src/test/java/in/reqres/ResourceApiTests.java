@@ -1,6 +1,5 @@
 package in.reqres;
 
-import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.resource.response.ResourceResponse;
 import io.restassured.http.ContentType;
@@ -15,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 @Tag("API")
-public class ResourceApiTests {
+public class ResourceApiTests extends TestBase {
 
-    @BeforeEach
-    public void setUp() {
-        Configuration.setup();
+    @BeforeAll
+    public static void setUp() {
+        TestBase.setUp();
     }
 
     @Test

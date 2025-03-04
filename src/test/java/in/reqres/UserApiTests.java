@@ -1,6 +1,5 @@
 package in.reqres;
 
-import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.user.response.UserInfoResponse;
 import in.reqres.models.user.request.CreateUserRequest;
@@ -17,11 +16,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Tag("API")
-public class UserApiTests {
+public class UserApiTests extends TestBase {
 
-    @BeforeEach
-    public void setUp() {
-        Configuration.setup();
+    @BeforeAll
+    public static void setUp() {
+        TestBase.setUp();
     }
 
     @Test
@@ -139,7 +138,6 @@ public class UserApiTests {
                 () -> assertNotNull(
                         expectedCreatedAt, "'createdAt' value should not be null"
                 )
-
         );
     }
 }

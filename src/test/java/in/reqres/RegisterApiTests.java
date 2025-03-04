@@ -1,6 +1,5 @@
 package in.reqres;
 
-import in.reqres.config.Configuration;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.register.request.RegisterRequest;
 import in.reqres.models.register.response.SuccessfulRegisterResponse;
@@ -13,16 +12,16 @@ import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 import static java.net.HttpURLConnection.HTTP_OK;
 
 @Tag("API")
-public class RegisterApiTests {
+public class RegisterApiTests extends TestBase {
 
     /**
      * In these tests, the email, password, id, and token values are 'magic values', meaning they are hardcoded in reqres.in.
      * Therefore, I don't use fake data for these variables and constants when creating the user object.
      */
 
-    @BeforeEach
-    public void setUp() {
-        Configuration.setup();
+    @BeforeAll
+    public static void setUp() {
+        TestBase.setUp();
     }
 
     @Test
