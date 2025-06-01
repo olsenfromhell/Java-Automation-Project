@@ -1,16 +1,15 @@
 package dev.qaplayground.pages;
 
-import com.codeborne.selenide.SelenideElement;
-
-import java.io.File;
-
 import static com.codeborne.selenide.Selenide.$;
+
+import com.codeborne.selenide.SelenideElement;
+import java.io.File;
 
 public class DownloadFilePage {
 
-    private SelenideElement fileDownloadButton = $("[id='file']");
+  private final SelenideElement fileDownloadButton = $("[id='file']");
 
-    public File downloadFile() {
-        return fileDownloadButton.download();
-    }
+  public File downloadFile() {
+    return fileDownloadButton.download();
+  }
 }

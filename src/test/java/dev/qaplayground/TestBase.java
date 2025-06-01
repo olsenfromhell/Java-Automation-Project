@@ -2,13 +2,17 @@ package dev.qaplayground;
 
 import com.codeborne.selenide.Selenide;
 import dev.qaplayground.config.BrowserConfig;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
-    public void setUp() {
-        BrowserConfig.setup(); // browser setup
-    }
+  @BeforeAll
+  public static void browserSetup() {
+    BrowserConfig.setup();
+  }
 
-    public void tearDown() {
-        Selenide.closeWebDriver(); // close web driver, just in case
-    }
+  @AfterEach
+  public void tearDown() {
+    Selenide.closeWebDriver(); // close web driver, just in case
+  }
 }
