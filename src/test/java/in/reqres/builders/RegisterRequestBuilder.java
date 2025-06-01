@@ -1,4 +1,4 @@
-package in.reqres.builder;
+package in.reqres.builders;
 
 import in.reqres.models.register.request.RegisterRequest;
 

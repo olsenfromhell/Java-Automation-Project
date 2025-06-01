@@ -6,6 +6,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import in.reqres.builders.CreateUserBuilder;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.user.request.CreateUserRequest;
 import in.reqres.models.user.response.CreateUserResponse;
@@ -17,11 +18,6 @@ import utils.DataFaker;
 
 @Tag("API")
 public class UserApiTests extends TestBase {
-
-  @BeforeAll
-  public static void setUp() {
-    TestBase.setUp();
-  }
 
   @Test
   @DisplayName("Get single user by ID and assert user's info")
@@ -42,6 +38,7 @@ public class UserApiTests extends TestBase {
     UserInfoResponse response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .get(Endpoints.USERS_ENDPOINT + userId)
             .then()
             .extract()
@@ -110,6 +107,7 @@ public class UserApiTests extends TestBase {
     Response response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .when()
             .get(Endpoints.USERS_ENDPOINT + userId)
             .then()
@@ -127,7 +125,10 @@ public class UserApiTests extends TestBase {
   @DisplayName("Send a POST request to create user and verify user is created")
   public void createUserWithPostRequestTest() {
     // Arrange
-    CreateUserRequest newUser = new CreateUserRequest(DataFaker.userName, DataFaker.userJob);
+    String name = DataFaker.userName;
+    String job = DataFaker.userJob;
+
+    CreateUserRequest newUser = CreateUserBuilder.createUser().name(name).job(job).build();
 
     String expectedName = newUser.getName();
     String expectedJob = newUser.getJob();
@@ -136,6 +137,7 @@ public class UserApiTests extends TestBase {
     CreateUserResponse response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .body(newUser)
             .when()
             .post(Endpoints.USERS_ENDPOINT)

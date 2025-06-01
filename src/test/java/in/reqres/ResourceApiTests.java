@@ -14,11 +14,6 @@ import org.junit.jupiter.api.*;
 @Tag("API")
 public class ResourceApiTests extends TestBase {
 
-  @BeforeAll
-  public static void setUp() {
-    TestBase.setUp();
-  }
-
   @Test
   @DisplayName("Get resource list and assert it's info")
   public void getResourceListInfoTest() {
@@ -37,6 +32,7 @@ public class ResourceApiTests extends TestBase {
     ResourceResponse response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .get(Endpoints.RESOURCES_ENDPOINT)
             .then()
             .extract()
@@ -103,6 +99,7 @@ public class ResourceApiTests extends TestBase {
     Response response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .get(Endpoints.RESOURCES_ENDPOINT + resourceId)
             .then()
             .statusCode(HTTP_NOT_FOUND)
@@ -124,6 +121,7 @@ public class ResourceApiTests extends TestBase {
     List<ResourceResponse.Data> response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .when()
             .get(Endpoints.RESOURCES_ENDPOINT)
             .then()

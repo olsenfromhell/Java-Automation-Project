@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 import static java.net.HttpURLConnection.HTTP_OK;
 
-import in.reqres.builder.RegisterRequestBuilder;
+import in.reqres.builders.RegisterRequestBuilder;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.register.request.RegisterRequest;
 import in.reqres.models.register.response.SuccessfulRegisterResponse;
@@ -20,11 +20,6 @@ public class RegisterApiTests extends TestBase {
    * hardcoded in reqres.in. Therefore, I don't use fake data for these variables and constants when
    * creating the user object.
    */
-  @BeforeAll
-  public static void setUp() {
-    TestBase.setUp();
-  }
-
   @Test
   @DisplayName("Register new user and check response")
   public void registerNewUserTest() {
@@ -41,6 +36,7 @@ public class RegisterApiTests extends TestBase {
     SuccessfulRegisterResponse response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .body(registrationRequest)
             .when()
             .post(Endpoints.REGISTER_ENDPOINT)
@@ -78,6 +74,7 @@ public class RegisterApiTests extends TestBase {
     UnsuccessfulRegisterResponse response =
         given()
             .contentType(ContentType.JSON)
+            .header(headerKey, headerValue)
             .body(registerRequest)
             .when()
             .post(Endpoints.REGISTER_ENDPOINT)
