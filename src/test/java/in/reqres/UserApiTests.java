@@ -6,7 +6,6 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import in.reqres.builders.CreateUserBuilder;
 import in.reqres.endpoints.Endpoints;
 import in.reqres.models.user.request.CreateUserRequest;
 import in.reqres.models.user.response.CreateUserResponse;
@@ -128,7 +127,8 @@ public class UserApiTests extends TestBase {
     String name = DataFaker.userName;
     String job = DataFaker.userJob;
 
-    CreateUserRequest newUser = CreateUserBuilder.createUser().name(name).job(job).build();
+    CreateUserRequest newUser = CreateUserRequest.builder()
+            .name(name).job(job).build();
 
     String expectedName = newUser.getName();
     String expectedJob = newUser.getJob();

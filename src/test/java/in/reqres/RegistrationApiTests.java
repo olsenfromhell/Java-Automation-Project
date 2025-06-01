@@ -4,16 +4,15 @@ import static io.restassured.RestAssured.given;
 import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 import static java.net.HttpURLConnection.HTTP_OK;
 
-import in.reqres.builders.RegisterRequestBuilder;
 import in.reqres.endpoints.Endpoints;
-import in.reqres.models.register.request.RegisterRequest;
-import in.reqres.models.register.response.SuccessfulRegisterResponse;
-import in.reqres.models.register.response.UnsuccessfulRegisterResponse;
+import in.reqres.models.registration.request.RegistrationRequest;
+import in.reqres.models.registration.response.SuccessfulRegistrationResponse;
+import in.reqres.models.registration.response.UnsuccessfulRegistrationResponse;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
 
 @Tag("API")
-public class RegisterApiTests extends TestBase {
+public class RegistrationApiTests extends TestBase {
 
   /**
    * In these tests, the email, password, id, and token values are 'magic values', meaning they are
@@ -29,11 +28,11 @@ public class RegisterApiTests extends TestBase {
     int expectedId = 4;
     String expectedToken = "QpwL5tke4Pnpja7X4";
 
-    RegisterRequest registrationRequest =
-        RegisterRequestBuilder.registrationRequest().email(email).password(password).build();
+    RegistrationRequest registrationRequest =
+            RegistrationRequest.builder().email(email).password(password).build();
 
     // Act
-    SuccessfulRegisterResponse response =
+    SuccessfulRegistrationResponse response =
         given()
             .contentType(ContentType.JSON)
             .header(headerKey, headerValue)
@@ -43,7 +42,7 @@ public class RegisterApiTests extends TestBase {
             .then()
             .statusCode(HTTP_OK)
             .extract()
-            .as(SuccessfulRegisterResponse.class);
+            .as(SuccessfulRegistrationResponse.class);
 
     int actualId = response.getId();
     String actualToken = response.getToken();
@@ -67,11 +66,11 @@ public class RegisterApiTests extends TestBase {
     String email = "sydney@fife";
     String expectedErrorMessage = "Missing password";
 
-    RegisterRequest registerRequest =
-        RegisterRequestBuilder.registrationRequest().email(email).build();
+    RegistrationRequest registerRequest =
+            RegistrationRequest.builder().email(email).build();
 
     // Act
-    UnsuccessfulRegisterResponse response =
+    UnsuccessfulRegistrationResponse response =
         given()
             .contentType(ContentType.JSON)
             .header(headerKey, headerValue)
@@ -81,7 +80,7 @@ public class RegisterApiTests extends TestBase {
             .then()
             .statusCode(HTTP_BAD_REQUEST)
             .extract()
-            .as(UnsuccessfulRegisterResponse.class);
+            .as(UnsuccessfulRegistrationResponse.class);
 
     String actualErrorMessage = response.getError();
 
