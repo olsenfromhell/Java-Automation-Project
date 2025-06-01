@@ -1,6 +1,6 @@
 ### Automation Project in Java
 
-This project is dedicated to practicing writing UI and API tests using the Arrange-Act-Assert pattern and Page Object model.
+This project is dedicated to practicing writing UI and API tests using the Arrange-Act-Assert pattern, Builder Pattern and Page Object model.
 The utils and frameworks used in this project include:
 
 - Selenide: for browser automation and UI testing.
@@ -13,6 +13,7 @@ The utils and frameworks used in this project include:
 - DataFaker: for generating data in tests.
 - Lombok: for generating Getters and Setters for POJO-classes.
 - FasterXML/Jackson: for working with JSON.
+- Spotless: for code formatting.
 
 The project is in development and I update it from time to time.
 
