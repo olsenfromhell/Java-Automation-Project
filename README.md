@@ -51,7 +51,7 @@ All tests are run with ```./gradlew clean test``` from root.
 - <i>Get nonexistent resource list and assert empty body.</i>
 - <i>Verify 'years' key values are sorted in ascending order in response.</i>
 
-[Registration tests](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/RegisterApiTests.java):
+[Registration tests](https://github.com/olsenfromhell/Java-Automation-Project/blob/main/src/test/java/in/reqres/RegistrationApiTests.java):
 - <i>Register new user and check response.</i>
 - <i>Try to register user without password and check error message.</i>
 
