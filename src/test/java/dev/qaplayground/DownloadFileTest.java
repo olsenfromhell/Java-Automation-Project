@@ -4,11 +4,12 @@ import com.codeborne.selenide.Selenide;
 import dev.qaplayground.endpoints.Endpoints;
 import dev.qaplayground.pages.DownloadFilePage;
 import java.io.File;
-import java.io.FileNotFoundException;
+
 import org.junit.jupiter.api.*;
 
 @Tag("UI")
 public class DownloadFileTest extends TestBase {
+
   private DownloadFilePage downloadFilePage;
 
   @BeforeEach
@@ -19,7 +20,7 @@ public class DownloadFileTest extends TestBase {
 
   @Test
   @DisplayName("Download a file and assert the file's name and size")
-  public void downloadFileFromPageTest() throws FileNotFoundException {
+  public void downloadFileFromPageTest() {
     // Arrange
     String expectedFileName = "sample.pdf";
     long expectedFileSize = 1042157;

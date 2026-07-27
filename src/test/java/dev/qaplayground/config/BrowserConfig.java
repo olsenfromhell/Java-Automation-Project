@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserConfig {
+
   public static void setup() {
     WebDriverManager.chromedriver().setup();
 

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 
 @Tag("UI")
 public class TagsInputBoxTest extends TestBase {
+
   private TagsInputBoxPage tagsInputBox;
 
   @BeforeEach

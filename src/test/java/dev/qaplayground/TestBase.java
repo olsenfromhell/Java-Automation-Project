@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
+
   @BeforeAll
   public static void browserSetup() {
     BrowserConfig.setup();

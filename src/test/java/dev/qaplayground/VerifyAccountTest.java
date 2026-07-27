@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 
 @Tag("UI")
 public class VerifyAccountTest extends TestBase {
+
   private VerifyAccountPage verifyAccount;
 
   @BeforeEach
