@@ -6,9 +6,10 @@ The utils and frameworks used in this project include:
 - Selenide: for browser automation and UI testing.
 - Rest Assured: for API testing.
 - JUnit 5: for writing and running tests.
-- Jenkins w/ Allure Reports: for CI and generating test reports.
 - Java Collections Framework: for handling data structures.
 - Stream API: for processing collections of objects.
+- Java Spring Framework (DI): @Autowired, @Component, @Configuration.
+- Jenkins w/ Allure Reports: for CI and generating test reports.
 - Gradle: for project build and dependency management.
 - DataFaker: for generating data in tests.
 - Lombok: for generating Getters and Setters for POJO-classes.
