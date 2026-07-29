@@ -29,9 +29,9 @@ public class UserApiTests extends TestBase {
     String expectedLastName = "Weaver";
 
     String expectedSupportUrl =
-        "https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral";
+        "https://benhowdle.im/first-cto-playbook?utm_source=reqres&utm_medium=json&utm_campaign=referral";
     String expectedSupportText =
-        "Tired of writing endless social media content? Let Content Caddy generate it for you.";
+        "Become a better CTO. A playbook of painful stories and practical advice from a two-time startup CTO.";
 
     // Act
     UserInfoResponse response =
