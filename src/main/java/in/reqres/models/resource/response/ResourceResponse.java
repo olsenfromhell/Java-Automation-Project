@@ -15,6 +15,7 @@ public class ResourceResponse {
   private int perPage;
 
   private int total;
+  private int error;
 
   @JsonProperty("total_pages")
   private int totalPages;

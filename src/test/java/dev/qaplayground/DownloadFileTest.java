@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import dev.qaplayground.endpoints.Endpoints;
 import dev.qaplayground.pages.DownloadFilePage;
 import java.io.File;
-
 import org.junit.jupiter.api.*;
 
 @Tag("UI")

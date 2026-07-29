@@ -29,7 +29,7 @@ public class RegistrationApiTests extends TestBase {
     String expectedToken = "QpwL5tke4Pnpja7X4";
 
     RegistrationRequest registrationRequest =
-            RegistrationRequest.builder().email(email).password(password).build();
+        RegistrationRequest.builder().email(email).password(password).build();
 
     // Act
     SuccessfulRegistrationResponse response =
@@ -66,8 +66,7 @@ public class RegistrationApiTests extends TestBase {
     String email = "sydney@fife";
     String expectedErrorMessage = "Missing password";
 
-    RegistrationRequest registerRequest =
-            RegistrationRequest.builder().email(email).build();
+    RegistrationRequest registerRequest = RegistrationRequest.builder().email(email).build();
 
     // Act
     UnsuccessfulRegistrationResponse response =

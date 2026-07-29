@@ -127,8 +127,7 @@ public class UserApiTests extends TestBase {
     String name = DataFaker.userName;
     String job = DataFaker.userJob;
 
-    CreateUserRequest newUser = CreateUserRequest.builder()
-            .name(name).job(job).build();
+    CreateUserRequest newUser = CreateUserRequest.builder().name(name).job(job).build();
 
     String expectedName = newUser.getName();
     String expectedJob = newUser.getJob();
