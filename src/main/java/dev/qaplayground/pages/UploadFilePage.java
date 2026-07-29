@@ -5,7 +5,9 @@ import static com.codeborne.selenide.Selenide.$;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import java.io.File;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UploadFilePage {
   private static final SelenideElement uploadImageInput = $("[id='file-input']");
   private static final SelenideElement uploadedImageName = $("figure > figcaption");

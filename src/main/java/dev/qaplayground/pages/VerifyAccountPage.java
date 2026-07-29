@@ -6,7 +6,9 @@ import static com.codeborne.selenide.Selenide.$$;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.springframework.stereotype.Component;
 
+@Component
 public class VerifyAccountPage {
   private final ElementsCollection inputField = $$("input[type='number']");
   private final SelenideElement successModal = $("[class='info success']");

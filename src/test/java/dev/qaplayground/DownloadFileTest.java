@@ -5,16 +5,16 @@ import dev.qaplayground.endpoints.Endpoints;
 import dev.qaplayground.pages.DownloadFilePage;
 import java.io.File;
 import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Tag("UI")
 public class DownloadFileTest extends TestBase {
 
-  private DownloadFilePage downloadFilePage;
+  @Autowired private DownloadFilePage downloadFilePage;
 
   @BeforeEach
   public void setUp() {
     Selenide.open(Endpoints.DOWNLOAD_FILE_PAGE);
-    downloadFilePage = new DownloadFilePage();
   }
 
   @Test

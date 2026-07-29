@@ -5,16 +5,16 @@ import dev.qaplayground.endpoints.Endpoints;
 import dev.qaplayground.pages.UploadFilePage;
 import java.io.File;
 import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Tag("UI")
 public class UploadFileTest extends TestBase {
 
-  private UploadFilePage uploadFilePage;
+  @Autowired private UploadFilePage uploadFilePage;
 
   @BeforeEach
   public void setUp() {
     Selenide.open(Endpoints.UPLOAD_FILE_PAGE);
-    uploadFilePage = new UploadFilePage();
   }
 
   @Test

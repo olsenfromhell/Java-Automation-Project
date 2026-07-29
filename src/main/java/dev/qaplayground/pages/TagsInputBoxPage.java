@@ -8,8 +8,10 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.springframework.stereotype.Component;
 import utils.DataFaker;
 
+@Component
 public class TagsInputBoxPage {
   private static final By tag = By.cssSelector("[class='uit uit-multiply']");
   private static final SelenideElement closeTagBtn = $(tag);

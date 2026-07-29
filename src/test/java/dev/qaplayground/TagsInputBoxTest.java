@@ -4,16 +4,16 @@ import com.codeborne.selenide.Selenide;
 import dev.qaplayground.endpoints.Endpoints;
 import dev.qaplayground.pages.TagsInputBoxPage;
 import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Tag("UI")
 public class TagsInputBoxTest extends TestBase {
 
-  private TagsInputBoxPage tagsInputBox;
+  @Autowired private TagsInputBoxPage tagsInputBox;
 
   @BeforeEach
   public void setUp() {
     Selenide.open(Endpoints.TAGS_INPUT_BOX_PAGE);
-    tagsInputBox = new TagsInputBoxPage();
   }
 
   @Test

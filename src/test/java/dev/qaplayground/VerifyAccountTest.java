@@ -4,16 +4,16 @@ import com.codeborne.selenide.Selenide;
 import dev.qaplayground.endpoints.Endpoints;
 import dev.qaplayground.pages.VerifyAccountPage;
 import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Tag("UI")
 public class VerifyAccountTest extends TestBase {
 
-  private VerifyAccountPage verifyAccount;
+  @Autowired private VerifyAccountPage verifyAccount;
 
   @BeforeEach
   public void setUp() {
     Selenide.open(Endpoints.VERIFY_ACCOUNT_PAGE);
-    verifyAccount = new VerifyAccountPage();
   }
 
   @Test
